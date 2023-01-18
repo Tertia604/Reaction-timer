@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { onUpdated, ref } from "@vue/runtime-core";
+import { ref } from "@vue/runtime-core";
 export default {
   props: {
     delay: {
@@ -19,8 +19,6 @@ export default {
       showBlock.value = true;
       startTimer();
     }, props.delay);
-
-    onUpdated(() => console.log("updated"));
 
     const startTimer = () => {
       timer.value = setInterval(() => {

@@ -15,16 +15,21 @@ export default {
   components: { Block, Results },
   setup() {
     const isPlaying = ref(false);
+    // задержка
     const delay = ref(null);
+    // счёт
     const score = ref(null);
+    // результаты
     const showResults = ref(false);
 
+    // начало игры
     const start = () => {
       delay.value = 2000 + Math.random() * 5000;
       isPlaying.value = true;
       showResults.value = false;
     };
 
+    // конец игры
     const endGame = (reactionTime) => {
       score.value = reactionTime;
       isPlaying.value = false;
